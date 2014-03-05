@@ -7,5 +7,7 @@
     <string name="call_emergency">Ring 113</string>
     <string name="title_activity_position">Nødhjelp</string>
     <string name="gps_pos">Din posisjon</string>
+    <string name="gps_history">GPS historie</string>
+    <string name="title_activity_gpstracker">GPSTracker</string>
 
 </resources>

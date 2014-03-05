@@ -1,5 +1,6 @@
-package com.example.nodhjelp;
+package no.hiof.android.nodhjelp;
 
+import no.hiof.android.nodhjelp.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -36,8 +37,13 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.get_gps_pos:
 			Intent intent = new Intent(this, PositionActivity.class);
 			startActivity(intent);
+			return true;
 			
 			
+		case R.id.get_gps_history:
+			Intent intentGPS = new Intent(this, GPSTracker.class);
+			startActivity(intentGPS);
+			return true;
 			
 		default:
 			return super.onOptionsItemSelected(item);

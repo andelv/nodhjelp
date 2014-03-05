@@ -1,4 +1,4 @@
-package com.example.nodhjelp;
+package no.hiof.android.nodhjelp;
 
 import android.app.AlertDialog;
 import android.content.Context;

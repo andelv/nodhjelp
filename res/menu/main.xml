@@ -13,6 +13,12 @@
   	    android:showAsAction="never"
         nodhjelp:showAsAction="never"/>
     
+  	<item
+  	    android:id="@+id/get_gps_history"
+  	    android:title="@string/gps_history"
+  	    android:showAsAction="never"
+  	    nodhjelp:showAsAction="never" />
+  	
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"

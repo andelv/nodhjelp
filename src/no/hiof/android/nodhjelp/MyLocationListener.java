@@ -1,4 +1,4 @@
-package com.example.nodhjelp;
+package no.hiof.android.nodhjelp;
 
 import android.app.Activity;
 import android.content.Context;
