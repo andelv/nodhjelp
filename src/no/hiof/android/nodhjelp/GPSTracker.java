@@ -27,7 +27,7 @@ public class GPSTracker extends ActionBarActivity {
 		switch (item.getItemId()) {
 		
 		case R.id.call_emergency:
-			Util.alertMessage(this);
+			UtilEMSCall.alertMessage(this);
 			return true;
 			
 		case R.id.get_gps_pos:

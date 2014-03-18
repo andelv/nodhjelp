@@ -1,4 +1,0 @@
-nodhjelp
-========
-
-Android app development

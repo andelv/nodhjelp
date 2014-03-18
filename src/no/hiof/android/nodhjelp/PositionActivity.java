@@ -7,8 +7,6 @@ import java.net.URL;
 import java.sql.Date;
 import java.util.ArrayList;
 
-import no.hiof.android.nodhjelp.R;
-
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -29,7 +27,7 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		switch (item.getItemId()) {
 		
 		case R.id.call_emergency:
-			Util.alertMessage(this);
+			UtilEMSCall.alertMessage(this);
 			return true;
 			
 		case R.id.get_gps_pos:
@@ -61,9 +59,12 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		final int GPS_TIME_INTERVAL = 60000; //gps update time interval in ms
+		
 		//obtain GPS position
 		LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+		//update pos
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, GPS_TIME_INTERVAL, 0, this);
 			
 	}
 	
@@ -89,6 +90,8 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		
 		//Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_SHORT).show();
 		tv.setText(text);
+		
+		//if(new DateTime(location.getTime().minusMinutes(5)) > new DateTime(oldTime));
 		
 		UtilGPSdb myGPSdb = new UtilGPSdb(this);
 		myGPSdb.open();

@@ -1,11 +1,14 @@
 package no.hiof.android.nodhjelp;
 
-import no.hiof.android.nodhjelp.R;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -31,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
 		switch (item.getItemId()) {
 		
 		case R.id.call_emergency:
-			Util.alertMessage(this);
+			UtilEMSCall.alertMessage(this);
 			return true;
 			
 		case R.id.get_gps_pos:
