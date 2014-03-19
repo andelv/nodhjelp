@@ -38,7 +38,7 @@ public class DownloadFiles extends AsyncTask<String, Void, String>{
 				Log.d("Feil", e.getMessage());
 			}
 			
-			webP = webP.substring(35);
+			webP = webP.substring(20);
 			
 			String[] web = webP.split("\\},\\{");
 			

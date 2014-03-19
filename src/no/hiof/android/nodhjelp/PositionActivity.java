@@ -74,12 +74,10 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 			public void onClick(View v) {
 				DownloadFiles dF = new DownloadFiles(PositionActivity.this);
 				dF.execute("https://data.helsenorge.no/External.svc/Services/KA02/"+
-						PositionActivity.this.lon + "/" + PositionActivity.this.lat +
+						PositionActivity.this.lon + "/" + PositionActivity.this.lat); /*+
 						"?callback=ProcessResults&" +
-						"$select=HealthServiceLatitude,HealthServiceLongitude,HealthServiceDisplayName," +
-						"VisitAddressPostName,VisitAddressPostNr,VisitAddressStreet,OpeningHours," +
-						"OpeningHoursComment,HealthServicePhone");
-				
+						"$select=HealthServiceLatitude,HealthServiceLongitude,HealthServiceDisplayName");
+						*/
 			}
 		});
 	}
