@@ -2,17 +2,13 @@ package no.hiof.android.nodhjelp;
 
 import java.util.ArrayList;
 
-import no.hiof.android.nodhjelp.R;
-
-import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class GPSTracker extends ActionBarActivity {

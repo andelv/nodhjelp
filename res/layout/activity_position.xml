@@ -8,6 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".PositionActivity" >
 
+    <TextView
+        android:id="@+id/GPS_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:text="@string/hospital" />
 
+    <TextView
+        android:id="@+id/Hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GPS_pos"/>
+    
 </RelativeLayout>

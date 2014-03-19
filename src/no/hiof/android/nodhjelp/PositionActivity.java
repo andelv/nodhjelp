@@ -1,25 +1,25 @@
 package no.hiof.android.nodhjelp;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.sql.Date;
-import java.util.ArrayList;
 
+import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 public class PositionActivity extends ActionBarActivity implements LocationListener{
+	float lon,lat,alt, acc, speed, time;
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -57,7 +57,7 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_position);
 		
 		final int GPS_TIME_INTERVAL = 60000; //gps update time interval in ms
 		
@@ -66,12 +66,28 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		//update pos
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, GPS_TIME_INTERVAL, 0, this);
 			
+		//button for nearest hospital
+		Button button1 = (Button) findViewById(R.id.button1);
+		button1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				DownloadFiles dF = new DownloadFiles(PositionActivity.this);
+				dF.execute("https://data.helsenorge.no/External.svc/Services/KA02/"+
+						PositionActivity.this.lon + "/" + PositionActivity.this.lat +
+						"?callback=ProcessResults&" +
+						"$select=HealthServiceLatitude,HealthServiceLongitude,HealthServiceDisplayName," +
+						"VisitAddressPostName,VisitAddressPostNr,VisitAddressStreet,OpeningHours," +
+						"OpeningHoursComment,HealthServicePhone");
+				
+			}
+		});
 	}
 	
 	@Override
 	public void onLocationChanged(Location location) {
 		TextView tv = (TextView) findViewById(R.id.GPS_pos);
-		float lon,lat,alt, acc, speed, time;
+		
 		lon = (float) location.getLongitude();
 		lat = (float) location.getLatitude();
 		time = (float) location.getTime();
@@ -85,7 +101,8 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		"\nBreddegrader = " + lat +
 		"\n\nHøyde = " + alt + 
 		"\nTreffsikkerhet = " + acc + 
-		"\n Fart = " + speed + "klokka er "+ date +" Zulo (UTC-0)";
+		"\n Fart = " + speed + "" +
+		"\nklokka er "+ date + " " + " Zulo (UTC-0)";
 		//String toastText = "Din pos er " +lon +" " +lat;
 		
 		//Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_SHORT).show();
@@ -97,6 +114,17 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		myGPSdb.open();
 		myGPSdb.insertRows(lat, lon, alt,  date.toString());
 		myGPSdb.close();
+	}
+	
+	public void Reader(String string){
+		Gson gson = new Gson();
+		Hospital hospital = gson.fromJson(string, Hospital.class);
+		
+		
+		TextView tvHospital = (TextView) findViewById(R.id.Hospital);
+		String nHospital = "Nærmeste sykehus er " + hospital.HealthServiceDisplayName +
+				" telefonnr er " + hospital.HealthServicePhone;
+		tvHospital.setText(nHospital);
 	}
 
 	@Override
@@ -117,7 +145,7 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		
 	}
 	
-	private static String getTextUrl(String address) {
+/*	private static String getTextUrl(String address) {
 		BufferedReader in;
 		try{
 			URL url = new URL (address);
@@ -141,5 +169,5 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 			return null;
 		}
 		
-	}
+	}*/
 }
