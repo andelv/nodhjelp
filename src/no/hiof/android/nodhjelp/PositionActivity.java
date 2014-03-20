@@ -1,6 +1,8 @@
 package no.hiof.android.nodhjelp;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import com.google.gson.Gson;
 
 public class PositionActivity extends ActionBarActivity implements LocationListener{
 	float lon,lat,alt, acc, speed, time;
+	Hospital hospital;
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -67,8 +70,8 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, GPS_TIME_INTERVAL, 0, this);
 			
 		//button for nearest hospital
-		Button button1 = (Button) findViewById(R.id.button1);
-		button1.setOnClickListener(new OnClickListener() {
+		Button btnShowHos = (Button) findViewById(R.id.button1);
+		btnShowHos.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -78,8 +81,23 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 						"?callback=ProcessResults&" +
 						"$select=HealthServiceLatitude,HealthServiceLongitude,HealthServiceDisplayName");
 						*/
+				
+				Button btnCallHos = (Button) findViewById(R.id.button2);
+				btnCallHos.setVisibility(View.VISIBLE);
+				btnCallHos.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						UtilHospitalCall.alertMessage(hospital.HealthServiceDisplayName, hospital.HealthServicePhone, PositionActivity.this);
+						
+					}
+				});
+				
+				
 			}
 		});
+		
+		
 	}
 	
 	@Override
@@ -99,8 +117,8 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		"\nBreddegrader = " + lat +
 		"\n\nHøyde = " + alt + 
 		"\nTreffsikkerhet = " + acc + 
-		"\n Fart = " + speed + "" +
-		"\nklokka er "+ date + " " + " Zulo (UTC-0)";
+		"\nFart = " + speed + "" +
+		"\nKlokka er "+ date + ".";
 		//String toastText = "Din pos er " +lon +" " +lat;
 		
 		//Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_SHORT).show();
@@ -116,13 +134,15 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 	
 	public void Reader(String string){
 		Gson gson = new Gson();
-		Hospital hospital = gson.fromJson(string, Hospital.class);
+		hospital = gson.fromJson(string, Hospital.class);
 		
 		
 		TextView tvHospital = (TextView) findViewById(R.id.Hospital);
 		String nHospital = "Nærmeste sykehus er " + hospital.HealthServiceDisplayName +
 				" telefonnr er " + hospital.HealthServicePhone;
 		tvHospital.setText(nHospital);
+		
+		
 	}
 
 	@Override
@@ -142,30 +162,5 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		// TODO Auto-generated method stub
 		
 	}
-	
-/*	private static String getTextUrl(String address) {
-		BufferedReader in;
-		try{
-			URL url = new URL (address);
-			InputStream is = url.openStream();
-			InputStreamReader ir = new InputStreamReader(is, "utf-8");
-			
-			in = new BufferedReader(ir);
-			
-			StringBuilder stringbuilder = new StringBuilder();
-			String string;
-			while ((string = in.readLine()) != null) {
-				stringbuilder.append(string);
-				stringbuilder.append("\n");
-			}
-			in.close();
-			
-			return stringbuilder.toString();
-		}
-		catch(Exception ex){
-			System.out.println(ex.toString());
-			return null;
-		}
-		
-	}*/
+
 }
