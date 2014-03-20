@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.widget.Toast;
 
 public class UtilEMSCall {
 
@@ -23,6 +24,8 @@ public class UtilEMSCall {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				makeCall("113", context);
+				String toastText = "Ringer 113";
+				Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
 			}
 		});
 		

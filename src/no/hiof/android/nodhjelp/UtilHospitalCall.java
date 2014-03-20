@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.widget.Toast;
 
 public class UtilHospitalCall {
 	public static void alertMessage(String hsName, final String hsPhone, final Context context) { 
@@ -19,6 +20,8 @@ public class UtilHospitalCall {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				makeCall(hsPhone, context);
+				String toastText = "Ringer "+hsPhone;
+				Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
 			}
 		});
 		
