@@ -8,10 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-
-
 public class MainActivity extends ActionBarActivity {
-
 	
 
 	@Override
@@ -46,6 +43,11 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.get_gps_history:
 			Intent intentGPS = new Intent(this, GPSTracker.class);
 			startActivity(intentGPS);
+			return true;
+			
+		case R.id.get_hospital_map:
+			Intent intenHos = new Intent(this, HospitalMap.class);
+			startActivity(intenHos);
 			return true;
 			
 		default:

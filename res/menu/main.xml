@@ -19,9 +19,9 @@
   	    android:showAsAction="never"
   	    nodhjelp:showAsAction="never" />
   	
-    <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+  	<item
+        android:id="@+id/get_hospital_map"
+        android:title="@string/hospital_map"
         android:showAsAction="never"
         nodhjelp:showAsAction="never"/>
     

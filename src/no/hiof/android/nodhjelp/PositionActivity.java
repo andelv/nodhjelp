@@ -43,6 +43,11 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 			startActivity(intentGPS);
 			return true;
 			
+		case R.id.get_hospital_map:
+			Intent intenHos = new Intent(this, HospitalMap.class);
+			startActivity(intenHos);
+			return true;
+			
 				
 		default:
 			return super.onOptionsItemSelected(item); }
