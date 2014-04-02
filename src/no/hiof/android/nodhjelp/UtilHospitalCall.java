@@ -12,7 +12,7 @@ public class UtilHospitalCall {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setTitle("Ringe legevakt?");
 		builder.setMessage("Ønsker du å ringe" + hsName + "?:  Om det er " +
-				"en nød situasjon ring 113. Er du i tvil ring 113!");
+				"en nødsituasjon ring 113. Er du i tvil ring 113!");
 		
 		builder.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			

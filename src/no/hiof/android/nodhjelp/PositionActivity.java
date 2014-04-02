@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 
 public class PositionActivity extends ActionBarActivity implements LocationListener{
 	float lon,lat,alt, acc, speed, time;
-	Hospital hospital;
+	public Hospital hospital;
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -149,6 +149,9 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		
 		
 	}
+	
+	
+	
 
 	@Override
 	public void onProviderDisabled(String provider) {
