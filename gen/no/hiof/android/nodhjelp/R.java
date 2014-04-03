@@ -1198,11 +1198,12 @@ containing a value of this type.
         public static final int action_menu_presenter=0x7f06001a;
         public static final int action_mode_close_button=0x7f060027;
         public static final int activity_chooser_view_content=0x7f060028;
+        public static final int altitude=0x7f060048;
         public static final int always=0x7f06000f;
         public static final int beginning=0x7f060014;
         public static final int button1=0x7f060042;
         public static final int button2=0x7f060044;
-        public static final int call_emergency=0x7f060045;
+        public static final int call_emergency=0x7f060049;
         public static final int checkbox=0x7f060030;
         public static final int collapseActionView=0x7f060011;
         public static final int default_activity_button=0x7f06002b;
@@ -1213,18 +1214,20 @@ containing a value of this type.
         public static final int end=0x7f060016;
         public static final int expand_activities_button=0x7f060029;
         public static final int expanded_menu=0x7f06002f;
-        public static final int get_gps_history=0x7f060047;
-        public static final int get_gps_pos=0x7f060046;
-        public static final int get_hospital_map=0x7f060048;
+        public static final int get_gps_history=0x7f06004b;
+        public static final int get_gps_pos=0x7f06004a;
+        public static final int get_hospital_map=0x7f06004c;
         public static final int home=0x7f060017;
         public static final int homeAsUp=0x7f060009;
         public static final int hybrid=0x7f060004;
         public static final int icon=0x7f06002d;
         public static final int ifRoom=0x7f06000e;
         public static final int image=0x7f06002a;
+        public static final int lat=0x7f060046;
         public static final int listMode=0x7f060005;
         public static final int listView1=0x7f06003f;
         public static final int list_item=0x7f06002c;
+        public static final int lon=0x7f060047;
         public static final int map=0x7f060040;
         public static final int middle=0x7f060015;
         public static final int never=0x7f06000d;
@@ -1252,6 +1255,7 @@ containing a value of this type.
         public static final int submit_area=0x7f06003c;
         public static final int tabMode=0x7f060006;
         public static final int terrain=0x7f060003;
+        public static final int time=0x7f060045;
         public static final int title=0x7f06002e;
         public static final int top_action_bar=0x7f060023;
         public static final int up=0x7f060024;
@@ -1312,7 +1316,8 @@ containing a value of this type.
         public static final int activity_hospital_map=0x7f030018;
         public static final int activity_main=0x7f030019;
         public static final int activity_position=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int list_item=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
         public static final int gpstracker=0x7f0c0000;
