@@ -1,17 +1,15 @@
-<menu	xmlns:android="http://schemas.android.com/apk/res/android" 
-		xmlns:nodhjelp="http://schemas.android.com/apk/res-auto" >
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nodhjelp="http://schemas.android.com/apk/res-auto" >
+
     <item
         android:id="@+id/call_emergency"
-        android:title="@string/call_emergency"
         android:showAsAction="always"
-        nodhjelp:showAsAction="always" />
-    
-  	<item
-  	    android:id="@+id/get_gps_pos"
-  	    android:title="@string/gps_pos"
-  	    android:showAsAction="never"
+        android:title="@string/call_emergency"
+        nodhjelp:showAsAction="always"/>
+    <item
+        android:id="@+id/get_gps_pos"
+        android:showAsAction="never"
+        android:title="@string/gps_pos"
         nodhjelp:showAsAction="never"/>
-    
-    
+
 </menu>

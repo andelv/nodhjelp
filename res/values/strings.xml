@@ -11,6 +11,11 @@
     <string name="hospital">Nærmeste legevakt</string>
     <string name="callHos">Ring legevakt</string>
     <string name="title_activity_hospital_map">HospitalMap</string>
+    <string name="edit_msg">Antall rader</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_show_map">Vis i kart</string>
+    <string name="title_activity_history_map">HistoryMap</string>
     <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

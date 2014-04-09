@@ -12,7 +12,33 @@
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true" >
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/edit_msg"
+        android:layout_centerHorizontal="true" >
     </ListView>
+
+    <EditText
+        android:id="@+id/edit_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_msg"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listView1"
+        android:layout_toRightOf="@+id/edit_msg"
+        android:text="@string/btn_send" />
+
+    <Button
+        android:id="@+id/btn_show_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listView1"
+        android:layout_toRightOf="@+id/btn_send"
+        android:text="@string/btn_show_map"
+        android:visibility="invisible" />
 
 </RelativeLayout>

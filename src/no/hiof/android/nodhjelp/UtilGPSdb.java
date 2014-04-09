@@ -63,7 +63,7 @@ public class UtilGPSdb {
 	public Cursor getAllRows(){
 		Cursor cursor = db.query(TABLENAME, new String[]{COLUMN_LOCATION_ID, 
 				COLUMN_LAT, COLUMN_LON, COLUMN_HEIGHT, COLUMN_TIME}, 
-				null, null, null, null, COLUMN_TIME);
+				null, null, null, null, COLUMN_LOCATION_ID + " DESC", null);
 		return cursor;
 	}
 	

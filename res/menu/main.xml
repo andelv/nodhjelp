@@ -1,28 +1,25 @@
-<menu	xmlns:android="http://schemas.android.com/apk/res/android" 
-		xmlns:nodhjelp="http://schemas.android.com/apk/res-auto" >
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nodhjelp="http://schemas.android.com/apk/res-auto" >
+
     <item
         android:id="@+id/call_emergency"
-        android:title="@string/call_emergency"
         android:showAsAction="always"
-        nodhjelp:showAsAction="always" />
-    
-  	<item
-  	    android:id="@+id/get_gps_pos"
-  	    android:title="@string/gps_pos"
-  	    android:showAsAction="never"
-        nodhjelp:showAsAction="never"/>
-    
-  	<item
-  	    android:id="@+id/get_gps_history"
-  	    android:title="@string/gps_history"
-  	    android:showAsAction="never"
-  	    nodhjelp:showAsAction="never" />
-  	
-  	<item
-        android:id="@+id/get_hospital_map"
-        android:title="@string/hospital_map"
+        android:title="@string/call_emergency"
+        nodhjelp:showAsAction="always"/>
+    <item
+        android:id="@+id/get_gps_pos"
         android:showAsAction="never"
+        android:title="@string/gps_pos"
         nodhjelp:showAsAction="never"/>
-    
+    <item
+        android:id="@+id/get_gps_history"
+        android:showAsAction="never"
+        android:title="@string/gps_history"
+        nodhjelp:showAsAction="never"/>
+    <item
+        android:id="@+id/get_hospital_map"
+        android:showAsAction="never"
+        android:title="@string/hospital_map"
+        nodhjelp:showAsAction="never"/>
+
 </menu>

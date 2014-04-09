@@ -67,7 +67,7 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_position);
 		
-		final int GPS_TIME_INTERVAL = 60000; //gps update time interval in ms
+		final int GPS_TIME_INTERVAL = 1000*60*5; //gps update time interval in ms, 5min
 		
 		//obtain GPS position
 		LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);

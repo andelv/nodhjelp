@@ -1,6 +1,5 @@
 package no.hiof.android.nodhjelp;
 
-import android.text.AlteredCharSequence;
 
 public class RowItem {
 	/*
@@ -25,7 +24,7 @@ public class RowItem {
 		return time;
 	}
 
-	public void setTime(String Time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
