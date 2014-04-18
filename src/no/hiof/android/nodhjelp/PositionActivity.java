@@ -38,6 +38,11 @@ public class PositionActivity extends ActionBarActivity implements LocationListe
 			startActivity(intent);
 			return true;
 			
+		case R.id.get_show_contacts:
+			Intent intentContacts = new Intent(this, ShowContacts.class);
+			startActivity(intentContacts);
+			return true;
+			
 		case R.id.get_gps_history:
 			Intent intentGPS = new Intent(this, GPSTracker.class);
 			startActivity(intentGPS);

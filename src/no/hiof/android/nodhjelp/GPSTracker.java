@@ -44,7 +44,12 @@ public class GPSTracker extends ActionBarActivity {
 			Intent intentGPS = new Intent(this, GPSTracker.class);
 			startActivity(intentGPS);
 			return true;
-
+			
+		case R.id.get_show_contacts:
+			Intent intentContacts = new Intent(this, ShowContacts.class);
+			startActivity(intentContacts);
+			return true;
+			
 		case R.id.get_hospital_map:
 			Intent intenHos = new Intent(this, HospitalMap.class);
 			startActivity(intenHos);

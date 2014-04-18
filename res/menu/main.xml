@@ -16,6 +16,13 @@
         android:showAsAction="never"
         android:title="@string/gps_history"
         nodhjelp:showAsAction="never"/>
+    <item 
+        android:id="@+id/get_show_contacts"
+        android:showAsAction="never"
+        android:title="@string/contactlist"
+        nodhjelp:showAsAction="never"
+        />
+    
     <item
         android:id="@+id/get_hospital_map"
         android:showAsAction="never"
