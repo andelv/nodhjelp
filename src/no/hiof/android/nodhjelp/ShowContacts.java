@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -16,23 +17,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
 import android.provider.ContactsContract;
 
 public class ShowContacts extends ActionBarActivity {
 	
 	public TextView outputText;
-    final static String NO_DATA = "mangler";
+    final static String NO_DATA = "";
 	static String fastlegeTlf = NO_DATA;
-	static String fastlegeMail = NO_DATA;
+
 	static String iceTlf = NO_DATA;
-	static String iceMail = NO_DATA;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.show_contacts);
 		outputText = (TextView) findViewById(R.id.textView1);
+		outputText.setText("\nFastlege\n\t\tTelefonnr: "+"\n\nICE\n\t\tTelefonnr: ");
 		fetchContacts();
 
 		
@@ -85,6 +88,21 @@ switch (item.getItemId()) {
 		startActivity(startModifyContacts);
 	}
 
+	public void callDoctor(View view) {
+		
+		String phoneCallUri = "tel:"+fastlegeTlf;
+	     Intent phoneCallIntent = new Intent(Intent.ACTION_CALL);
+	     phoneCallIntent.setData(Uri.parse(phoneCallUri));
+	     startActivity(phoneCallIntent);
+	}
+	
+	public void callIce(View view) {
+		
+		String phoneCallUri = "tel:"+iceTlf;
+	     Intent phoneCallIntent = new Intent(Intent.ACTION_CALL);
+	     phoneCallIntent.setData(Uri.parse(phoneCallUri));
+	     startActivity(phoneCallIntent);
+	}
   
 	public void fetchContacts() {
 

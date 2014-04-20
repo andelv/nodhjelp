@@ -64,7 +64,8 @@
         android:layout_alignBottom="@+id/textView1"
         android:layout_alignRight="@+id/editText3"
         android:ems="10"
-        android:inputType="phone" />
+        android:inputType="phone"  ><requestFocus />
+</EditText>
 
     <Button
         android:id="@+id/button1"

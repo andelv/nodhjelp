@@ -80,7 +80,7 @@ public class ModifyContacts extends ActionBarActivity {
 	        	while (cur.moveToNext()) {
 	        		String existName = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 	        		if (existName.contains(name)) {
-	                	Toast.makeText(ModifyContacts.this,"The contact name: " + name + " already exists", Toast.LENGTH_SHORT).show();
+	                	
 	                	
 	                	return false;        			
 	        		}
@@ -117,7 +117,7 @@ public class ModifyContacts extends ActionBarActivity {
 				e.printStackTrace();
 			}
 
-	    	Toast.makeText(ModifyContacts.this, "Created a new contact with name: " + name + " and Phone No: " + phone, Toast.LENGTH_SHORT).show();
+	    	
 	    	return true;
 	    }
 	 

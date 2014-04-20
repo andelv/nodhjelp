@@ -1294,7 +1294,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060019;
         public static final int action_menu_presenter=0x7f06001a;
         public static final int action_mode_close_button=0x7f060027;
-        public static final int action_settings=0x7f06005a;
+        public static final int action_settings=0x7f06005b;
         public static final int activity_chooser_view_content=0x7f060028;
         public static final int altitude=0x7f06004b;
         public static final int always=0x7f06000f;
@@ -1303,7 +1303,8 @@ containing a value of this type.
         public static final int btn_show_map=0x7f060042;
         public static final int button1=0x7f060045;
         public static final int button2=0x7f060047;
-        public static final int call_emergency=0x7f060055;
+        public static final int button3=0x7f060055;
+        public static final int call_emergency=0x7f060056;
         public static final int checkbox=0x7f060030;
         public static final int collapseActionView=0x7f060011;
         public static final int default_activity_button=0x7f06002b;
@@ -1317,10 +1318,10 @@ containing a value of this type.
         public static final int end=0x7f060016;
         public static final int expand_activities_button=0x7f060029;
         public static final int expanded_menu=0x7f06002f;
-        public static final int get_gps_history=0x7f060057;
-        public static final int get_gps_pos=0x7f060056;
-        public static final int get_hospital_map=0x7f060059;
-        public static final int get_show_contacts=0x7f060058;
+        public static final int get_gps_history=0x7f060058;
+        public static final int get_gps_pos=0x7f060057;
+        public static final int get_hospital_map=0x7f06005a;
+        public static final int get_show_contacts=0x7f060059;
         public static final int home=0x7f060017;
         public static final int homeAsUp=0x7f060009;
         public static final int hybrid=0x7f060004;
@@ -1586,6 +1587,7 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f070013;
         public static final int contactlist=0x7f070038;
         public static final int edit_msg=0x7f070032;
+        public static final int endre=0x7f070040;
         public static final int fastlege=0x7f070034;
         public static final int gps_history=0x7f07002d;
         public static final int gps_pos=0x7f07002c;
@@ -1597,6 +1599,7 @@ containing a value of this type.
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f07001a;
+        public static final int ringknapp=0x7f070041;
         public static final int title_activity_gpstracker=0x7f07002e;
         public static final int title_activity_history_map=0x7f07003b;
         public static final int title_activity_hospital_map=0x7f070031;
