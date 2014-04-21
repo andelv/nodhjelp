@@ -34,15 +34,10 @@ public class GPSTracker extends ActionBarActivity {
 		case R.id.call_emergency:
 			UtilEMSCall.alertMessage(this);
 			return true;
-
+			
 		case R.id.get_gps_pos:
 			Intent intent = new Intent(this, PositionActivity.class);
 			startActivity(intent);
-			return true;
-
-		case R.id.get_gps_history:
-			Intent intentGPS = new Intent(this, GPSTracker.class);
-			startActivity(intentGPS);
 			return true;
 			
 		case R.id.get_show_contacts:
@@ -50,11 +45,21 @@ public class GPSTracker extends ActionBarActivity {
 			startActivity(intentContacts);
 			return true;
 			
+		case R.id.get_gps_history:
+			Intent intentGPS = new Intent(this, GPSTracker.class);
+			startActivity(intentGPS);
+			return true;
+			
+		case R.id.get_show_instructions:
+			Intent intentInstructions = new Intent(this, FirstAidInstructions.class);
+			startActivity(intentInstructions);
+			return true;
+			
 		case R.id.get_hospital_map:
 			Intent intenHos = new Intent(this, HospitalMap.class);
 			startActivity(intenHos);
 			return true;
-
+			
 		default:
 			return super.onOptionsItemSelected(item);
 

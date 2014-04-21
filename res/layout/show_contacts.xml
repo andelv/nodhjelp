@@ -2,27 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".ShowContacts" >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="Viktig kontaktinformasjon"
-        android:textSize="20dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+    
 
     <TextView
         android:id="@+id/textView1"
@@ -30,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
         android:layout_below="@+id/textView"
-        android:text="" />
+        android:text="" 
+        android:layout_marginLeft="10dp"/>
 
     <Button
         android:id="@+id/button1"
@@ -45,21 +28,23 @@
         android:text="@string/endre" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignTop="@+id/textView1"
-        android:onClick="callDoctor"
-        android:text="@string/ringknapp" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button2"
         android:onClick="callIce"
+        android:text="@string/ringknapp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="17dp"
+        android:onClick="callDoctor"
         android:text="@string/ringknapp" />
 
 </RelativeLayout>

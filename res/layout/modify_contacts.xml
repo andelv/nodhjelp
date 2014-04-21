@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
      android:paddingTop="10dp"
-    tools:context=".MainActivity" >
+    tools:context=".ModifyContacts" >
 
       <TextView
         android:id="@+id/TextView01"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/TextView01"
         android:editable="true"
         android:layout_marginTop="16dp"
-        android:text="@string/tlfnr" />/>
+        android:text="@string/tlfnr" />
 
    
 

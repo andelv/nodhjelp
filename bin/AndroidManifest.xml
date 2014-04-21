@@ -12,8 +12,11 @@
         android:name="no.hiof.android.nodhjelp.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" >
     </permission>
-<uses-permission android:name="android.permission.READ_CONTACTS" > </uses-permission>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" >
+    </uses-permission>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="no.hiof.android.nodhjelp.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -71,6 +74,10 @@
         <activity
             android:name="no.hiof.android.nodhjelp.ModifyContacts"
             android:label="@string/title_activity_modify_contacts" >
+        </activity>
+        <activity
+            android:name="no.hiof.android.nodhjelp.FirstAidInstructions"
+            android:label="@string/title_activity_first_aid_instructions" >
         </activity>
     </application>
 

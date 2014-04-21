@@ -12,12 +12,15 @@
     <string name="callHos">Ring legevakt</string>
     <string name="title_activity_hospital_map">HospitalMap</string>
     <string name="edit_msg">Antall rader</string>
-      <string name="ice">ICE</string>
+    <string name="ice">ICE</string>
     <string name="fastlege">Fastlege</string>
-     <string name="avbryt">Avbryt</string>
-    <string name = "lagre">Lagre</string>
+    <string name="avbryt">Avbryt</string>
+    <string name="lagre">Lagre</string>
     <string name="tlfnr">Telefon</string>
     <string name="contactlist">Kontaktliste</string>
+    <string name ="cpr">Hjerte-Lunge-Redning</string>
+    <string name = "bleed">Blødninger</string>
+    <string name = "firstAidKit">Sjekkliste førstehjelpsskrin</string>
     <string name="btn_send">Send</string>
     <string name="btn_show_map">Vis i kart</string>
     <string name="title_activity_history_map">HistoryMap</string>
@@ -26,7 +29,17 @@
     <string name="title_activity_show_contacts">Nødhjelp</string>
     <string name="title_activity_modify_contacts">Nødhjelp</string>
     <string name="endre">Rediger</string>
+    <string name="instructions">Førstehjelp</string>
     <string name="ringknapp">Ring</string>
-  
+    <string name="title_activity_first_aid_instructions">Nødhjelp</string>
+    
+     <string-array name="informationSelection">
+        <item>Hjerte-Lunge-Redning</item>
+        <item>Blødninger</item>
+        <item>Førstehjelpsskrin, sjekkliste</item>
+        <item>Rødekors (link)</item>
+        <item>Lommelegen (link)</item>
+    </string-array>
+        <string name="velg">Velg</string>
 
 </resources>
