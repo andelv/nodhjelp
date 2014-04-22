@@ -87,6 +87,6 @@
         android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/button1"
         android:onClick="startAvbryt"
-        android:text="avbryt" />
+        android:text="@string/avbryt" />
 
 </RelativeLayout>

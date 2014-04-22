@@ -1285,7 +1285,8 @@ containing a value of this type.
     public static final class id {
         public static final int GPS_pos=0x7f060044;
         public static final int Hospital=0x7f060046;
-        public static final int TextView01=0x7f06004e;
+        public static final int SCROLLER_ID=0x7f060049;
+        public static final int TextView01=0x7f06004f;
         public static final int action_bar=0x7f06001f;
         public static final int action_bar_activity_content=0x7f060018;
         public static final int action_bar_container=0x7f06001e;
@@ -1297,35 +1298,35 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060019;
         public static final int action_menu_presenter=0x7f06001a;
         public static final int action_mode_close_button=0x7f060027;
-        public static final int action_settings=0x7f060056;
+        public static final int action_settings=0x7f060057;
         public static final int activity_chooser_view_content=0x7f060028;
-        public static final int altitude=0x7f06004d;
+        public static final int altitude=0x7f06004e;
         public static final int always=0x7f06000f;
         public static final int beginning=0x7f060014;
         public static final int btn_send=0x7f060041;
         public static final int btn_show_map=0x7f060042;
         public static final int button1=0x7f060045;
         public static final int button2=0x7f060047;
-        public static final int button3=0x7f060055;
-        public static final int call_emergency=0x7f060057;
+        public static final int button3=0x7f060056;
+        public static final int call_emergency=0x7f060058;
         public static final int checkbox=0x7f060030;
         public static final int collapseActionView=0x7f060011;
         public static final int default_activity_button=0x7f06002b;
         public static final int dialog=0x7f060012;
         public static final int disableHome=0x7f06000c;
         public static final int dropdown=0x7f060013;
-        public static final int editText1=0x7f060053;
-        public static final int editText3=0x7f060052;
+        public static final int editText1=0x7f060054;
+        public static final int editText3=0x7f060053;
         public static final int edit_msg=0x7f060040;
         public static final int edit_query=0x7f060033;
         public static final int end=0x7f060016;
         public static final int expand_activities_button=0x7f060029;
         public static final int expanded_menu=0x7f06002f;
-        public static final int get_gps_history=0x7f060059;
-        public static final int get_gps_pos=0x7f060058;
-        public static final int get_hospital_map=0x7f06005c;
-        public static final int get_show_contacts=0x7f06005a;
-        public static final int get_show_instructions=0x7f06005b;
+        public static final int get_gps_history=0x7f06005a;
+        public static final int get_gps_pos=0x7f060059;
+        public static final int get_hospital_map=0x7f06005d;
+        public static final int get_show_contacts=0x7f06005b;
+        public static final int get_show_instructions=0x7f06005c;
         public static final int home=0x7f060017;
         public static final int homeAsUp=0x7f060009;
         public static final int hybrid=0x7f060004;
@@ -1333,11 +1334,11 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000e;
         public static final int image=0x7f06002a;
         public static final int infoSpinner=0x7f060048;
-        public static final int lat=0x7f06004b;
+        public static final int lat=0x7f06004c;
         public static final int listMode=0x7f060005;
         public static final int listView1=0x7f06003f;
         public static final int list_item=0x7f06002c;
-        public static final int lon=0x7f06004c;
+        public static final int lon=0x7f06004d;
         public static final int map=0x7f060043;
         public static final int middle=0x7f060015;
         public static final int never=0x7f06000d;
@@ -1365,12 +1366,12 @@ containing a value of this type.
         public static final int submit_area=0x7f06003c;
         public static final int tabMode=0x7f060006;
         public static final int terrain=0x7f060003;
-        public static final int textView=0x7f060054;
-        public static final int textView1=0x7f060049;
-        public static final int textView2=0x7f060051;
-        public static final int textView3=0x7f060050;
-        public static final int textView4=0x7f06004f;
-        public static final int time=0x7f06004a;
+        public static final int textView=0x7f060055;
+        public static final int textView1=0x7f06004a;
+        public static final int textView2=0x7f060052;
+        public static final int textView3=0x7f060051;
+        public static final int textView4=0x7f060050;
+        public static final int time=0x7f06004b;
         public static final int title=0x7f06002e;
         public static final int top_action_bar=0x7f060023;
         public static final int up=0x7f060024;
@@ -1490,7 +1491,7 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f070026;
-        public static final int action_settings=0x7f070040;
+        public static final int action_settings=0x7f07003d;
         public static final int app_name=0x7f070028;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -1516,9 +1517,8 @@ containing a value of this type.
          */
         public static final int auth_client_using_bad_version_title=0x7f070014;
         public static final int avbryt=0x7f070035;
-        public static final int bleed=0x7f07003a;
-        public static final int btn_send=0x7f07003c;
-        public static final int btn_show_map=0x7f07003d;
+        public static final int btn_send=0x7f070039;
+        public static final int btn_show_map=0x7f07003a;
         public static final int callHos=0x7f070030;
         public static final int call_emergency=0x7f07002a;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
@@ -1593,32 +1593,31 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f070013;
         public static final int contactlist=0x7f070038;
-        public static final int cpr=0x7f070039;
         public static final int edit_msg=0x7f070032;
-        public static final int endre=0x7f070043;
+        public static final int endre=0x7f070040;
         public static final int fastlege=0x7f070034;
-        public static final int firstAidKit=0x7f07003b;
         public static final int gps_history=0x7f07002d;
         public static final int gps_pos=0x7f07002c;
-        public static final int hello_world=0x7f07003f;
+        public static final int hello_world=0x7f07003c;
         public static final int hospital=0x7f07002f;
         public static final int hospital_map=0x7f070029;
         public static final int ice=0x7f070033;
-        public static final int instructions=0x7f070044;
+        public static final int instructions=0x7f070041;
         public static final int lagre=0x7f070036;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f07001a;
-        public static final int ringknapp=0x7f070045;
-        public static final int title_activity_first_aid_instructions=0x7f070046;
+        public static final int no_text=0x7f070043;
+        public static final int ringknapp=0x7f070042;
+        public static final int title_activity_first_aid_instructions=0x7f070044;
         public static final int title_activity_gpstracker=0x7f07002e;
-        public static final int title_activity_history_map=0x7f07003e;
+        public static final int title_activity_history_map=0x7f07003b;
         public static final int title_activity_hospital_map=0x7f070031;
-        public static final int title_activity_modify_contacts=0x7f070042;
+        public static final int title_activity_modify_contacts=0x7f07003f;
         public static final int title_activity_position=0x7f07002b;
-        public static final int title_activity_show_contacts=0x7f070041;
+        public static final int title_activity_show_contacts=0x7f07003e;
         public static final int tlfnr=0x7f070037;
-        public static final int velg=0x7f070047;
+        public static final int velg=0x7f070045;
     }
     public static final class style {
         /** 
