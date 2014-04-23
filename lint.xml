@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="NewApi">
+        <ignore path="src/no/hiof/android/nodhjelp/HistoryMap.java" />
+        <ignore path="src/no/hiof/android/nodhjelp/HistoryMap.java" />
+    </issue>
 </lint>

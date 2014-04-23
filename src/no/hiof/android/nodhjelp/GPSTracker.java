@@ -34,32 +34,33 @@ public class GPSTracker extends ActionBarActivity {
 		case R.id.call_emergency:
 			UtilEMSCall.alertMessage(this);
 			return true;
-			
+
 		case R.id.get_gps_pos:
 			Intent intent = new Intent(this, PositionActivity.class);
 			startActivity(intent);
 			return true;
-			
+
 		case R.id.get_show_contacts:
 			Intent intentContacts = new Intent(this, ShowContacts.class);
 			startActivity(intentContacts);
 			return true;
-			
+
 		case R.id.get_gps_history:
 			Intent intentGPS = new Intent(this, GPSTracker.class);
 			startActivity(intentGPS);
 			return true;
-			
+
 		case R.id.get_show_instructions:
-			Intent intentInstructions = new Intent(this, FirstAidInstructions.class);
+			Intent intentInstructions = new Intent(this,
+					FirstAidInstructions.class);
 			startActivity(intentInstructions);
 			return true;
-			
+
 		case R.id.get_hospital_map:
 			Intent intenHos = new Intent(this, HospitalMap.class);
 			startActivity(intenHos);
 			return true;
-			
+
 		default:
 			return super.onOptionsItemSelected(item);
 
@@ -87,26 +88,53 @@ public class GPSTracker extends ActionBarActivity {
 
 				rowItems2 = new ArrayList<RowItem>();
 
-				historyPos = new double[historyNr * 2];
+				// if input nr of line is smaller than number of rows in
+				// database
+				if (historyNr < shortDb.getNrOfRows()) {
+					historyPos = new double[historyNr * 2];
 
-				for (int i = 0; i < historyNr; i++) {
-					RowItem item = new RowItem(cursorShort.getString(4),
-							"lat: " + cursorShort.getString(1), ", lon: "
-									+ cursorShort.getString(2), ", alt: "
-									+ cursorShort.getString(3));
+					for (int i = 0; i < historyNr; i++) {
+						RowItem item = new RowItem(cursorShort.getString(4),
+								"lat: " + cursorShort.getString(1), ", lon: "
+										+ cursorShort.getString(2), ", alt: "
+										+ cursorShort.getString(3));
 
-					rowItems2.add(item);
-					historyPos[2 * i] = (Double.parseDouble(cursorShort
-							.getString(1)));// lat
-					historyPos[2 * i + 1] = (Double.parseDouble(cursorShort
-							.getString(2)));// long
-					cursorShort.moveToNext();
-					cursorShort.isAfterLast();
+						rowItems2.add(item);
+						historyPos[2 * i] = (Double.parseDouble(cursorShort
+								.getString(1)));// lat
+						historyPos[2 * i + 1] = (Double.parseDouble(cursorShort
+								.getString(2)));// lng
+						cursorShort.moveToNext();
+						cursorShort.isAfterLast();
 
+					}
+
+				}
+				// if input nr of line is larger than number of rows in
+				// database
+				else {
+					historyPos = new double[shortDb.getNrOfRows() * 2];
+
+					for (int i = 0; i < shortDb.getNrOfRows(); i++) {
+						RowItem item = new RowItem(cursorShort.getString(4),
+								"lat: " + cursorShort.getString(1), ", lon: "
+										+ cursorShort.getString(2), ", alt: "
+										+ cursorShort.getString(3));
+
+						rowItems2.add(item);
+						historyPos[2 * i] = (Double.parseDouble(cursorShort
+								.getString(1)));// lat
+						historyPos[2 * i + 1] = (Double.parseDouble(cursorShort
+								.getString(2)));// long
+						cursorShort.moveToNext();
+						cursorShort.isAfterLast();
+
+					}
 				}
 
 				shortDb.close();
 
+				// use custom listview
 				listView = (ListView) findViewById(R.id.listView1);
 				CustomListViewAdapter adapter = new CustomListViewAdapter(
 						GPSTracker.this, R.id.list_item, rowItems2);
@@ -120,6 +148,8 @@ public class GPSTracker extends ActionBarActivity {
 
 					@Override
 					public void onClick(View v) {
+						// start an activity with map, uses intent extra to
+						// transfer values
 						Intent intent = new Intent(GPSTracker.this,
 								HistoryMap.class);
 						intent.putExtra("HISTORY POSITIONS", historyPos);

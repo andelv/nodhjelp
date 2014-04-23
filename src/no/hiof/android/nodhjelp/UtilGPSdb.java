@@ -67,6 +67,21 @@ public class UtilGPSdb {
 		return cursor;
 	}
 	
+	public Cursor getRowsFromDate() {
+		Cursor cursorD = db.query(TABLENAME, new String[]{COLUMN_LOCATION_ID, 
+				COLUMN_LAT, COLUMN_LON, COLUMN_HEIGHT, COLUMN_TIME}, 
+				null, null, null, null, COLUMN_LOCATION_ID + " DESC", null);
+		
+		return cursorD;
+	}
+	
+	public int getNrOfRows() {
+		Cursor cursorNrRows = db.rawQuery("select * from " + TABLENAME, null);
+		int count = cursorNrRows.getCount();
+		cursorNrRows.close();
+		return count;
+	}
+	
 	public void open() throws SQLException{
 		db = dbhelper.getWritableDatabase();
 	}

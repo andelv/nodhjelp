@@ -37,32 +37,33 @@ public class HospitalMap extends ActionBarActivity implements LocationListener,
 		case R.id.call_emergency:
 			UtilEMSCall.alertMessage(this);
 			return true;
-			
+
 		case R.id.get_gps_pos:
 			Intent intent = new Intent(this, PositionActivity.class);
 			startActivity(intent);
 			return true;
-			
+
 		case R.id.get_show_contacts:
 			Intent intentContacts = new Intent(this, ShowContacts.class);
 			startActivity(intentContacts);
 			return true;
-			
+
 		case R.id.get_gps_history:
 			Intent intentGPS = new Intent(this, GPSTracker.class);
 			startActivity(intentGPS);
 			return true;
-			
+
 		case R.id.get_show_instructions:
-			Intent intentInstructions = new Intent(this, FirstAidInstructions.class);
+			Intent intentInstructions = new Intent(this,
+					FirstAidInstructions.class);
 			startActivity(intentInstructions);
 			return true;
-			
+
 		case R.id.get_hospital_map:
 			Intent intenHos = new Intent(this, HospitalMap.class);
 			startActivity(intenHos);
 			return true;
-			
+
 		default:
 			return super.onOptionsItemSelected(item);
 
@@ -85,7 +86,7 @@ public class HospitalMap extends ActionBarActivity implements LocationListener,
 		// update pos
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
 				0, this);
-
+		// map
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();
 
@@ -114,19 +115,13 @@ public class HospitalMap extends ActionBarActivity implements LocationListener,
 				Double.valueOf(myHospital.HealthServiceLongitude));
 		String displayName = new String(myHospital.HealthServiceDisplayName);
 
+		// set a marker and zooms maps to nearest hospital
 		map.setOnMarkerClickListener(this);
-
 		Marker Hos = map.addMarker(new MarkerOptions().position(nearestHos)
 				.title(displayName));
 
 		Hos.showInfoWindow();
-
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(nearestHos, 15));
-
-		/*
-		 * Polyline myLine = map.addPolyline(new PolylineOptions() .add(new
-		 * LatLng(59, 10)) .width(1) .color(Color.RED));
-		 */
 
 	}
 
