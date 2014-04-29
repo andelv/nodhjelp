@@ -8,14 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class HistoryMap extends ActionBarActivity {
 
-	private GoogleMap map;
 	double[] histPos;
 
 	@Override
@@ -24,8 +22,9 @@ public class HistoryMap extends ActionBarActivity {
 		setContentView(R.layout.activity_history_map);
 
 		// map
-		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-				.getMap();
+		SupportMapFragment map = ((SupportMapFragment) getSupportFragmentManager()
+				.findFragmentById(R.id.map));
+		map.getMap();
 
 		// options for polyline
 		PolylineOptions line = new PolylineOptions();
@@ -38,8 +37,9 @@ public class HistoryMap extends ActionBarActivity {
 		histPos = bundle.getDoubleArray("HISTORY POSITIONS");
 
 		// moves map cam to first pos
-		map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(histPos[2],
-				histPos[3]), 12));
+		map.getMap().moveCamera(
+				CameraUpdateFactory.newLatLngZoom(new LatLng(histPos[2],
+						histPos[3]), 12));
 
 		// add positions to line
 		for (int i = 0; i < histPos.length / 2; i++) {
@@ -50,7 +50,7 @@ public class HistoryMap extends ActionBarActivity {
 		}
 
 		// draw polyline between latlng points
-		map.addPolyline(line);
+		map.getMap().addPolyline(line);
 	}
 
 	@Override
